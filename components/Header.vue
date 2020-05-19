@@ -1,23 +1,21 @@
 <template>
   <header class="header">
-    <container class="container container_header">
-      <nuxt-link to="/" v-if="$route.path !== '/'" class="header__logo"
-        >Проект Благотворительного Фонда Константина Хабенского
-      </nuxt-link>
-      <p class="header__logo" v-else>
-        Проект Благотворительного Фонда Константина Хабенского
+    <nuxt-link to="/" v-if="$route.path !== '/'" class="header__logo"
+      >Проект Благотворительного Фонда Константина Хабенского</nuxt-link
+    >
+    <p class="header__logo" v-else>
+      Проект Благотворительного Фонда Константина Хабенского
+    </p>
+    <hamburger-menu />
+    <main-menu class="header__menu">
+      <p
+        class="menu__link header__link_share"
+        @click="$store.commit('popup/open')"
+      >
+        Рассказать историю
       </p>
-      <main-menu class="header__menu">
-        <button
-          type="button"
-          class="menu__link header__share"
-          @click="$store.commit('popup/open')"
-        >
-          Рассказать историю
-        </button>
-      </main-menu>
-      <hamburger-menu class="header__mobile-icon" />
-    </container>
+    </main-menu>
+    <hamburger-menu class="header__mobile-icon" />
   </header>
 </template>
 
@@ -69,15 +67,7 @@ export default {
   padding: 0;
   background-color: #fff;
   color: #121212;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: normal;
-  transition: 0.3s;
-}
-
-.header__share:hover {
   cursor: pointer;
-  opacity: 0.8;
 }
 
 .header__mobile-icon {

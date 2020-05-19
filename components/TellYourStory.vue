@@ -36,43 +36,13 @@
         </div>
       </div>
 
-      <!--<Button
+      <Button
         v-if="variantOneShown"
         @custom-click="$store.commit('popup/open')"
         class="form-button"
         type="button"
         >Заполнить форму</Button
       >
-
-      <Button
-        v-if="variantTwoShown"
-        @custom-click="$store.commit('popup/open')"
-        class="form-button"
-        type="button"
-        >Оставить контакт</Button
-      >-->
-
-      <popupbutton
-        v-if="variantOneShown"
-        @custom-click="$store.commit('popup/open')"
-        className="popup__button"
-        class="form-button"
-      >
-        <p class="popup__button-description">
-          <slot>Заполнить форму</slot>
-        </p>
-      </popupbutton>
-
-      <popupbutton
-        v-if="variantTwoShown"
-        @custom-click="$store.commit('popup/open')"
-        className="popup__button"
-        class="form-button"
-      >
-        <p class="popup__button-description">
-          <slot>Оставить контакт</slot>
-        </p>
-      </popupbutton>
     </container>
   </section>
 </template>
